@@ -8,7 +8,14 @@ const ORGS = [
     priority: true,
     url: "https://www.greaterlouisville.com",
     freq: "Weekly events",
-    note: "The metro chamber of commerce. Now merging with LEDA as 'One Louisville' — will be the single economic development and business advocacy org for the region. Primary networking hub; member companies span every sector TrueTym targets."
+    note: "The metro chamber of commerce. Now merging with LEDA as 'One Louisville' — will be the single economic development and business advocacy org for the region. Primary networking hub; member companies span every sector TrueTym targets.",
+    events: [
+      { name: "Business After Hours", freq: "Monthly", month: null, url: "https://www.greaterlouisville.com/events" },
+      { name: "GLI Annual Meeting", freq: "Annual", month: "February", url: "https://www.greaterlouisville.com/events" },
+      { name: "GLI Public Affairs Forum", freq: "Quarterly", month: null, url: "https://www.greaterlouisville.com/events" },
+      { name: "One Louisville Launch & Transition Events", freq: "Periodic", month: null, url: "https://www.greaterlouisville.com/events" },
+      { name: "Economic Development Breakfast Series", freq: "Periodic", month: null, url: "https://www.greaterlouisville.com/events" }
+    ]
   },
   {
     id: 2,
@@ -19,7 +26,12 @@ const ORGS = [
     priority: false,
     url: "https://www.stmatthewschamber.com",
     freq: "Monthly",
-    note: "Neighborhood chamber for the St. Matthews corridor. Good for hyperlocal SME contacts. Monthly luncheons and mixers draw owner-operators from the east Louisville business community."
+    note: "Neighborhood chamber for the St. Matthews corridor. Good for hyperlocal SME contacts. Monthly luncheons and mixers draw owner-operators from the east Louisville business community.",
+    events: [
+      { name: "Monthly Business Luncheon", freq: "Monthly", month: null, url: "https://www.stmatthewschamber.com/events" },
+      { name: "Business After Hours Mixer", freq: "Monthly", month: null, url: "https://www.stmatthewschamber.com/events" },
+      { name: "Annual Awards Dinner", freq: "Annual", month: "November", url: "https://www.stmatthewschamber.com/events" }
+    ]
   },
   {
     id: 3,
@@ -30,7 +42,13 @@ const ORGS = [
     priority: false,
     url: "https://www.jtownchamber.com",
     freq: "Monthly",
-    note: "Active east Louisville chamber with historically strong manufacturing and industrial membership. The J-town industrial corridor has several distribution and light manufacturing employers."
+    note: "Active east Louisville chamber with historically strong manufacturing and industrial membership. The J-town industrial corridor has several distribution and light manufacturing employers.",
+    events: [
+      { name: "Monthly Business Luncheon", freq: "Monthly", month: null, url: "https://www.jtownchamber.com/events" },
+      { name: "Business After Hours", freq: "Monthly", month: null, url: "https://www.jtownchamber.com/events" },
+      { name: "JTown Bash (Annual Summer Event)", freq: "Annual", month: "July", url: "https://www.jtownchamber.com/events" },
+      { name: "Annual Awards Celebration", freq: "Annual", month: "January", url: "https://www.jtownchamber.com/events" }
+    ]
   },
   {
     id: 4,
@@ -41,7 +59,13 @@ const ORGS = [
     priority: false,
     url: "https://www.oldhamcountychamber.com",
     freq: "Monthly",
-    note: "Growing suburban market north of Louisville. Strong construction and home services presence as the county continues residential expansion."
+    note: "Growing suburban market north of Louisville. Strong construction and home services presence as the county continues residential expansion.",
+    events: [
+      { name: "Monthly Business Breakfast", freq: "Monthly", month: null, url: "https://www.oldhamcountychamber.com/events" },
+      { name: "Business Expo", freq: "Annual", month: "April", url: "https://www.oldhamcountychamber.com/events" },
+      { name: "Annual Golf Classic", freq: "Annual", month: "June", url: "https://www.oldhamcountychamber.com/events" },
+      { name: "Annual Dinner & Awards", freq: "Annual", month: "October", url: "https://www.oldhamcountychamber.com/events" }
+    ]
   },
   {
     id: 5,
@@ -52,7 +76,13 @@ const ORGS = [
     priority: true,
     url: "https://louisvilleiba.org",
     freq: "Monthly+",
-    note: "Louisville's independent business coalition focused on preserving the city's unique community character. Progressive SME audience with strong local ties. Monthly mixers well-attended by owner-operators."
+    note: "Louisville's independent business coalition focused on preserving the city's unique community character. Progressive SME audience with strong local ties. Monthly mixers well-attended by owner-operators.",
+    events: [
+      { name: "Monthly LIBA Mixer", freq: "Monthly", month: null, url: "https://louisvilleiba.org/events" },
+      { name: "LIBA Holiday Party", freq: "Annual", month: "December", url: "https://louisvilleiba.org/events" },
+      { name: "Independent Business Day Celebration", freq: "Annual", month: "July", url: "https://louisvilleiba.org/events" },
+      { name: "Buy Local Louisville Campaign Events", freq: "Seasonal", month: null, url: "https://louisvilleiba.org/events" }
+    ]
   },
   {
     id: 6,
@@ -63,7 +93,12 @@ const ORGS = [
     priority: false,
     url: "https://www.louisvillehcc.com",
     freq: "Monthly",
-    note: "Serves Hispanic/Latino business community. The Hispanic population in KY grew 247% from 2000-2020, with a significant share in frontline manufacturing, construction, and home healthcare roles — a key TrueTym demographic."
+    note: "Serves Hispanic/Latino business community. The Hispanic population in KY grew 247% from 2000-2020, with a significant share in frontline manufacturing, construction, and home healthcare roles — a key TrueTym demographic.",
+    events: [
+      { name: "Monthly Networking Event", freq: "Monthly", month: null, url: "https://www.louisvillehcc.com/events" },
+      { name: "Latino Business Summit", freq: "Annual", month: "September", url: "https://www.louisvillehcc.com/events" },
+      { name: "Annual Gala & Awards", freq: "Annual", month: "November", url: "https://www.louisvillehcc.com/events" }
+    ]
   },
   {
     id: 7,
@@ -74,7 +109,12 @@ const ORGS = [
     priority: false,
     url: "https://civitasky.org",
     freq: "Periodic",
-    note: "Statewide LGBTQ+ chamber with Louisville and Lexington presence. Emerging networking community, not a primary target but good for relationship-building."
+    note: "Statewide LGBTQ+ chamber with Louisville and Lexington presence. Emerging networking community, not a primary target but good for relationship-building.",
+    events: [
+      { name: "Pride Business Reception", freq: "Annual", month: "June", url: "https://civitasky.org/events" },
+      { name: "Quarterly Business Mixer", freq: "Quarterly", month: null, url: "https://civitasky.org/events" },
+      { name: "Annual Membership Celebration", freq: "Annual", month: "November", url: "https://civitasky.org/events" }
+    ]
   },
   {
     id: 8,
@@ -85,7 +125,12 @@ const ORGS = [
     priority: false,
     url: "https://nulubusinessassociation.org",
     freq: "Monthly",
-    note: "East Market District neighborhood association. Boutique networking, arts and food-heavy. Lower overlap with TrueTym's frontline employer target but good for general Louisville business visibility."
+    note: "East Market District neighborhood association. Boutique networking, arts and food-heavy. Lower overlap with TrueTym's frontline employer target but good for general Louisville business visibility.",
+    events: [
+      { name: "Monthly Member Meeting", freq: "Monthly", month: null, url: "https://nulubusinessassociation.org" },
+      { name: "NuLu Festival", freq: "Annual", month: "September", url: "https://nulubusinessassociation.org" },
+      { name: "First Friday Business Events", freq: "Monthly", month: null, url: "https://nulubusinessassociation.org" }
+    ]
   },
   {
     id: 9,
@@ -96,7 +141,12 @@ const ORGS = [
     priority: false,
     url: "https://middletownchamber.com",
     freq: "Monthly",
-    note: "East Louisville neighborhood chamber. Growing commercial and light industrial corridor along the Shelbyville Road corridor."
+    note: "East Louisville neighborhood chamber. Growing commercial and light industrial corridor along the Shelbyville Road corridor.",
+    events: [
+      { name: "Monthly Business Luncheon", freq: "Monthly", month: null, url: "https://middletownchamber.com/events" },
+      { name: "Business After Hours", freq: "Monthly", month: null, url: "https://middletownchamber.com/events" },
+      { name: "Annual Awards Gala", freq: "Annual", month: "October", url: "https://middletownchamber.com/events" }
+    ]
   },
   {
     id: 10,
@@ -107,7 +157,14 @@ const ORGS = [
     priority: true,
     url: "https://www.kychamber.com",
     freq: "Regular summits + annual",
-    note: "The statewide chamber. Partners with 80+ local chambers across KY, 25,000 professionals. Hosts annual Kentucky Workforce Summit and legislative events. Key relationship for statewide reach."
+    note: "The statewide chamber. Partners with 80+ local chambers across KY, 25,000 professionals. Hosts annual Kentucky Workforce Summit and legislative events. Key relationship for statewide reach.",
+    events: [
+      { name: "Kentucky Workforce Summit", freq: "Annual", month: "April", url: "https://www.kychamber.com/events" },
+      { name: "Kentucky Chamber Annual Meeting", freq: "Annual", month: "September", url: "https://www.kychamber.com/events" },
+      { name: "Legislative Preview Luncheon", freq: "Annual", month: "January", url: "https://www.kychamber.com/events" },
+      { name: "Education & Workforce Summit", freq: "Annual", month: "October", url: "https://www.kychamber.com/events" },
+      { name: "Kentucky Business Summit", freq: "Annual", month: "May", url: "https://www.kychamber.com/events" }
+    ]
   },
   {
     id: 11,
@@ -118,7 +175,13 @@ const ORGS = [
     priority: true,
     url: "https://www.kychamber.com/WorkforceCenter",
     freq: "Ongoing programs + events",
-    note: "Top coalition priority. Runs Talent Pipeline Management, Bus to Business, and Workforce Ecosystem Alignment programs statewide. 650 employers across 70 industries. The right institutional partner for embedding TrueTym as a technology layer."
+    note: "Top coalition priority. Runs Talent Pipeline Management, Bus to Business, and Workforce Ecosystem Alignment programs statewide. 650 employers across 70 industries. The right institutional partner for embedding TrueTym as a technology layer.",
+    events: [
+      { name: "Kentucky Workforce Summit", freq: "Annual", month: "April", url: "https://www.kychamber.com/WorkforceCenter" },
+      { name: "Talent Pipeline Management (TPM) Convenings", freq: "Quarterly", month: null, url: "https://www.kychamber.com/WorkforceCenter" },
+      { name: "Workforce Ecosystem Alignment Forum", freq: "Annual", month: "Fall", url: "https://www.kychamber.com/WorkforceCenter" },
+      { name: "Bus to Business Tour Events", freq: "Periodic", month: null, url: "https://www.kychamber.com/WorkforceCenter" }
+    ]
   },
   {
     id: 12,
@@ -129,7 +192,12 @@ const ORGS = [
     priority: true,
     url: "https://kwib.ky.gov",
     freq: "Quarterly board meetings + events",
-    note: "State workforce governance body under the KY Education and Labor Cabinet. Access to all 10 Local Workforce Development Areas across Kentucky. Attending KWIB events signals government-level legitimacy for TrueTym."
+    note: "State workforce governance body under the KY Education and Labor Cabinet. Access to all 10 Local Workforce Development Areas across Kentucky. Attending KWIB events signals government-level legitimacy for TrueTym.",
+    events: [
+      { name: "KWIB Quarterly Board Meeting", freq: "Quarterly", month: null, url: "https://kwib.ky.gov" },
+      { name: "Annual Workforce Innovation Report Release", freq: "Annual", month: "Fall", url: "https://kwib.ky.gov" },
+      { name: "Workforce Development Area Convenings", freq: "Periodic", month: null, url: "https://kwib.ky.gov" }
+    ]
   },
   {
     id: 13,
@@ -140,7 +208,14 @@ const ORGS = [
     priority: true,
     url: "https://kam.us.com",
     freq: "Annual summit + periodic events",
-    note: "Premier KY manufacturing association. Annual KAM Summit and Kentucky Industry Conference (co-hosted with MI2) are must-attend events. Direct access to plant managers, HR directors, and operations leads across manufacturing."
+    note: "Premier KY manufacturing association. Annual KAM Summit and Kentucky Industry Conference (co-hosted with MI2) are must-attend events. Direct access to plant managers, HR directors, and operations leads across manufacturing.",
+    events: [
+      { name: "KAM Annual Summit", freq: "Annual", month: "May", url: "https://kam.us.com/events" },
+      { name: "Kentucky Industry Conference (co-hosted w/ MI2)", freq: "Annual", month: "October", url: "https://kam.us.com/events" },
+      { name: "KAM Golf Classic", freq: "Annual", month: "June", url: "https://kam.us.com/events" },
+      { name: "HR & Workforce Roundtable", freq: "Periodic", month: null, url: "https://kam.us.com/events" },
+      { name: "KAM Legislative Day at the Capitol", freq: "Annual", month: "February", url: "https://kam.us.com/events" }
+    ]
   },
   {
     id: 14,
@@ -151,7 +226,13 @@ const ORGS = [
     priority: true,
     url: "https://mi2ky.org",
     freq: "Annual conference + periodic",
-    note: "KY metals and advanced manufacturing innovation network. Co-hosts Kentucky Industry Conference with KAM. Strong workforce development and technology adoption focus — natural audience for TrueTym's labor intelligence positioning."
+    note: "KY metals and advanced manufacturing innovation network. Co-hosts Kentucky Industry Conference with KAM. Strong workforce development and technology adoption focus — natural audience for TrueTym's labor intelligence positioning.",
+    events: [
+      { name: "Kentucky Industry Conference (co-hosted w/ KAM)", freq: "Annual", month: "October", url: "https://mi2ky.org/events" },
+      { name: "MI2 Annual Awards & Recognition", freq: "Annual", month: "Spring", url: "https://mi2ky.org/events" },
+      { name: "Advanced Manufacturing Technology Showcase", freq: "Periodic", month: null, url: "https://mi2ky.org/events" },
+      { name: "Workforce Innovation Roundtable", freq: "Periodic", month: null, url: "https://mi2ky.org/events" }
+    ]
   },
   {
     id: 15,
@@ -162,7 +243,14 @@ const ORGS = [
     priority: true,
     url: "https://www.agcky.org",
     freq: "Regular events + Build KY Awards",
-    note: "Full-service commercial construction association, 550+ contractor members statewide. Build Kentucky Awards is a major annual event. Members are exactly the distributed-workforce construction companies TrueTym is built for."
+    note: "Full-service commercial construction association, 550+ contractor members statewide. Build Kentucky Awards is a major annual event. Members are exactly the distributed-workforce construction companies TrueTym is built for.",
+    events: [
+      { name: "Build Kentucky Awards", freq: "Annual", month: "November", url: "https://www.agcky.org/events" },
+      { name: "AGC-KY Annual Meeting", freq: "Annual", month: "January", url: "https://www.agcky.org/events" },
+      { name: "Construction Safety Conference", freq: "Annual", month: "March", url: "https://www.agcky.org/events" },
+      { name: "Annual Golf Classic", freq: "Annual", month: "August", url: "https://www.agcky.org/events" },
+      { name: "Workforce & Labor Roundtable", freq: "Periodic", month: null, url: "https://www.agcky.org/events" }
+    ]
   },
   {
     id: 16,
@@ -173,7 +261,14 @@ const ORGS = [
     priority: true,
     url: "https://bialouisville.com",
     freq: "Monthly networking + annual events",
-    note: "Louisville home building and construction industry association. Monthly networking events, annual golf tournament, continuing education events. Member companies have distributed field workforces — high TrueTym fit."
+    note: "Louisville home building and construction industry association. Monthly networking events, annual golf tournament, continuing education events. Member companies have distributed field workforces — high TrueTym fit.",
+    events: [
+      { name: "Monthly Networking Mixer", freq: "Monthly", month: null, url: "https://bialouisville.com/events" },
+      { name: "Annual Golf Tournament", freq: "Annual", month: "June", url: "https://bialouisville.com/events" },
+      { name: "BIA Annual Awards Gala", freq: "Annual", month: "November", url: "https://bialouisville.com/events" },
+      { name: "Louisville Housing Summit", freq: "Annual", month: "February", url: "https://bialouisville.com/events" },
+      { name: "Continuing Education & Code Update Events", freq: "Periodic", month: null, url: "https://bialouisville.com/events" }
+    ]
   },
   {
     id: 17,
@@ -184,7 +279,12 @@ const ORGS = [
     priority: false,
     url: "https://www.louisvillecontractors.com",
     freq: "Regular",
-    note: "Covers mechanical, electrical, plumbing, and specialty contractors in Louisville. Good secondary contact source for construction employers with significant hourly workforces."
+    note: "Covers mechanical, electrical, plumbing, and specialty contractors in Louisville. Good secondary contact source for construction employers with significant hourly workforces.",
+    events: [
+      { name: "Monthly Member Meeting", freq: "Monthly", month: null, url: "https://www.louisvillecontractors.com/events" },
+      { name: "Annual Golf Outing", freq: "Annual", month: "Summer", url: "https://www.louisvillecontractors.com/events" },
+      { name: "Annual Awards Banquet", freq: "Annual", month: "Fall", url: "https://www.louisvillecontractors.com/events" }
+    ]
   },
   {
     id: 18,
@@ -195,7 +295,13 @@ const ORGS = [
     priority: true,
     url: "https://khca.org",
     freq: "Annual conference + periodic",
-    note: "Represents home health agencies, home care providers, and hospice organizations statewide. Home health has some of the highest frontline turnover in any sector — a core TrueTym pain point. Annual conference is a must-attend."
+    note: "Represents home health agencies, home care providers, and hospice organizations statewide. Home health has some of the highest frontline turnover in any sector — a core TrueTym pain point. Annual conference is a must-attend.",
+    events: [
+      { name: "KHCA Annual Conference & Expo", freq: "Annual", month: "October", url: "https://khca.org/events" },
+      { name: "Spring Education Seminar", freq: "Annual", month: "April", url: "https://khca.org/events" },
+      { name: "KHCA Advocacy Day at the Capitol", freq: "Annual", month: "February", url: "https://khca.org/events" },
+      { name: "Workforce Retention Roundtable", freq: "Periodic", month: null, url: "https://khca.org/events" }
+    ]
   },
   {
     id: 19,
@@ -206,7 +312,12 @@ const ORGS = [
     priority: false,
     url: "https://kahcf.org",
     freq: "Periodic",
-    note: "Long-term care and skilled nursing facility focus. Workforce retention is the sector's biggest challenge. Secondary target after KHCA."
+    note: "Long-term care and skilled nursing facility focus. Workforce retention is the sector's biggest challenge. Secondary target after KHCA.",
+    events: [
+      { name: "KAHCF Annual Convention", freq: "Annual", month: "September", url: "https://kahcf.org/events" },
+      { name: "Quarterly Board & Member Meetings", freq: "Quarterly", month: null, url: "https://kahcf.org/events" },
+      { name: "Legislative Day at the Capitol", freq: "Annual", month: "February", url: "https://kahcf.org/events" }
+    ]
   },
   {
     id: 20,
@@ -217,7 +328,13 @@ const ORGS = [
     priority: false,
     url: "https://kytrucking.com",
     freq: "Annual convention + periodic",
-    note: "Covers trucking, freight, and supply chain across KY. Louisville is a major logistics hub (UPS Worldport). Driver management, dispatch scheduling, and workforce reliability are persistent pain points."
+    note: "Covers trucking, freight, and supply chain across KY. Louisville is a major logistics hub (UPS Worldport). Driver management, dispatch scheduling, and workforce reliability are persistent pain points.",
+    events: [
+      { name: "KTA Annual Convention & Expo", freq: "Annual", month: "August", url: "https://kytrucking.com/events" },
+      { name: "Safety & Technology Conference", freq: "Annual", month: "March", url: "https://kytrucking.com/events" },
+      { name: "KTA Golf Classic", freq: "Annual", month: "June", url: "https://kytrucking.com/events" },
+      { name: "Legislative Reception", freq: "Annual", month: "January", url: "https://kytrucking.com/events" }
+    ]
   },
   {
     id: 21,
@@ -228,7 +345,11 @@ const ORGS = [
     priority: false,
     url: "",
     freq: "Periodic",
-    note: "Logistics and distribution networking in the Louisville market. UPS, Amazon, and major 3PL operators in the region create a dense frontline logistics workforce that fits TrueTym's model."
+    note: "Logistics and distribution networking in the Louisville market. UPS, Amazon, and major 3PL operators in the region create a dense frontline logistics workforce that fits TrueTym's model.",
+    events: [
+      { name: "Quarterly Logistics Luncheon", freq: "Quarterly", month: null, url: "" },
+      { name: "Annual Logistics & Supply Chain Forum", freq: "Annual", month: "Fall", url: "" }
+    ]
   },
   {
     id: 22,
@@ -239,7 +360,13 @@ const ORGS = [
     priority: false,
     url: "https://www.1si.org",
     freq: "Regular events",
-    note: "Clark and Floyd County economic development organization and chamber. Bridges the Louisville metro into Southern Indiana. Good for cross-market reach with similar frontline employer demographics."
+    note: "Clark and Floyd County economic development organization and chamber. Bridges the Louisville metro into Southern Indiana. Good for cross-market reach with similar frontline employer demographics.",
+    events: [
+      { name: "Monthly Business After Hours", freq: "Monthly", month: null, url: "https://www.1si.org/events" },
+      { name: "Good Morning Southern Indiana Breakfast", freq: "Monthly", month: null, url: "https://www.1si.org/events" },
+      { name: "Annual Meeting & Economic Outlook Dinner", freq: "Annual", month: "January", url: "https://www.1si.org/events" },
+      { name: "SoIN Business Expo", freq: "Annual", month: "Spring", url: "https://www.1si.org/events" }
+    ]
   },
   {
     id: 23,
@@ -250,7 +377,12 @@ const ORGS = [
     priority: false,
     url: "https://louisvilleky.gov/government/forward",
     freq: "Periodic",
-    note: "City's economic development arm. Runs forgivable loan programs and employer engagement initiatives tied to job creation. Can be a back-channel for introductions to larger employers."
+    note: "City's economic development arm. Runs forgivable loan programs and employer engagement initiatives tied to job creation. Can be a back-channel for introductions to larger employers.",
+    events: [
+      { name: "Quarterly Economic Briefing", freq: "Quarterly", month: null, url: "https://louisvilleky.gov/government/forward" },
+      { name: "Employer Roundtable", freq: "Periodic", month: null, url: "https://louisvilleky.gov/government/forward" },
+      { name: "Louisville Economic Development Summit", freq: "Annual", month: "Fall", url: "https://louisvilleky.gov/government/forward" }
+    ]
   },
   {
     id: 24,
@@ -261,7 +393,12 @@ const ORGS = [
     priority: false,
     url: "https://newkentuckyhome.ky.gov",
     freq: "Periodic / announcement-based",
-    note: "State-level economic development agency under the New Kentucky Home initiative. Events are typically tied to major investment announcements. Good for staying aware of large employers entering or expanding in KY."
+    note: "State-level economic development agency under the New Kentucky Home initiative. Events are typically tied to major investment announcements. Good for staying aware of large employers entering or expanding in KY.",
+    events: [
+      { name: "Investment Announcement Events", freq: "Periodic", month: null, url: "https://newkentuckyhome.ky.gov" },
+      { name: "New Kentucky Home Initiative Forums", freq: "Periodic", month: null, url: "https://newkentuckyhome.ky.gov" },
+      { name: "Statewide Economic Development Conference", freq: "Annual", month: "Fall", url: "https://newkentuckyhome.ky.gov" }
+    ]
   },
   {
     id: 25,
@@ -272,7 +409,12 @@ const ORGS = [
     priority: false,
     url: "https://gamechangemanufacturing.org",
     freq: "Periodic",
-    note: "NSF-funded innovation engine for advanced manufacturing and supply chain across KY/TN corridor. Partners with KAM and MI2. Workforce development is a core pillar. Emerging organization worth tracking."
+    note: "NSF-funded innovation engine for advanced manufacturing and supply chain across KY/TN corridor. Partners with KAM and MI2. Workforce development is a core pillar. Emerging organization worth tracking.",
+    events: [
+      { name: "GAME Change Annual Summit", freq: "Annual", month: "Fall", url: "https://gamechangemanufacturing.org/events" },
+      { name: "Workforce Innovation Forum", freq: "Periodic", month: null, url: "https://gamechangemanufacturing.org/events" },
+      { name: "Manufacturing Technology Showcase", freq: "Periodic", month: null, url: "https://gamechangemanufacturing.org/events" }
+    ]
   }
 ];
 
