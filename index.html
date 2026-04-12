@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TrueTym — Kentucky Event Radar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-brand">
+    <span class="nav-logo"></span>
+    <span class="nav-title">Event Radar</span>
+    <span class="nav-sub">Kentucky &amp; Louisville</span>
+  </div>
+  <div class="nav-actions">
+    <button class="btn-ghost" id="exportBtn">Export CSV</button>
+    <button class="btn-primary" id="addEventBtn">+ Log event</button>
+  </div>
+</nav>
+
+<div class="layout">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-label">Search</div>
+      <input type="text" id="searchInput" placeholder="Organization or keyword..." class="search-input">
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">Geography</div>
+      <div class="filter-list" id="geoFilters"></div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">Category</div>
+      <div class="filter-list" id="typeFilters"></div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">Sector</div>
+      <div class="filter-list" id="sectorFilters"></div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">Event status</div>
+      <div class="filter-list" id="statusFilters"></div>
+    </div>
+
+    <div class="sidebar-section sidebar-stats" id="sidebarStats"></div>
+  </aside>
+
+  <main class="main" id="main">
+
+    <div class="view-tabs">
+      <button class="tab active" data-view="orgs">Organizations</button>
+      <button class="tab" data-view="events">Event log</button>
+      <button class="tab" data-view="calendar">Calendar view</button>
+    </div>
+
+    <div id="view-orgs" class="view active"></div>
+    <div id="view-events" class="view"></div>
+    <div id="view-calendar" class="view"></div>
+
+  </main>
+</div>
+
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" id="modal">
+    <div class="modal-header">
+      <h2 id="modalTitle">Log event</h2>
+      <button class="modal-close" id="modalClose">&times;</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
