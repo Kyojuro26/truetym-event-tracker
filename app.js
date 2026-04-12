@@ -169,6 +169,43 @@ function renderOrgsView() {
   container.innerHTML = html;
 }
 
+function openFindEvents(orgName, e) {
+  e.stopPropagation();
+  const encoded = encodeURIComponent(orgName);
+  window.open(`https://lu.ma/search?q=${encoded}`, "_blank");
+  window.open(`https://www.eventbrite.com/d/ky--louisville/${encoded}/`, "_blank");
+}
+
+function toggleKnownEvents(orgId, e) {
+  e.stopPropagation();
+  const el = document.getElementById(`known-events-${orgId}`);
+  const toggle = document.getElementById(`known-toggle-${orgId}`);
+  if (!el) return;
+  const isHidden = el.style.display === "none" || el.style.display === "";
+  el.style.display = isHidden ? "block" : "none";
+  if (toggle) toggle.textContent = isHidden ? "Hide known events ▲" : "See known events ▼";
+}
+
+function knownEventsHtml(o) {
+  if (!o.events || !o.events.length) return "";
+  const items = o.events.map(ev => {
+    const linkPart = ev.url
+      ? `<a href="${ev.url}" target="_blank" onclick="event.stopPropagation()" class="known-event-link">↗</a>`
+      : "";
+    const monthPart = ev.month ? ` · ${ev.month}` : "";
+    return `<div class="known-event-item">
+      <span class="known-event-name">${ev.name}</span>
+      <span class="known-event-meta">${ev.freq}${monthPart}</span>
+      ${linkPart}
+    </div>`;
+  }).join("");
+
+  return `<div class="known-events-section">
+    <button class="known-events-toggle" id="known-toggle-${o.id}" onclick="toggleKnownEvents(${o.id}, event)">See known events ▼</button>
+    <div class="known-events-list" id="known-events-${o.id}" style="display:none">${items}</div>
+  </div>`;
+}
+
 function orgCardHtml(o) {
   const eventCount = state.events.filter(e => e.orgId === o.id).length;
   const badges = [typeBadgeHtml(o.type)];
@@ -182,9 +219,13 @@ function orgCardHtml(o) {
     ${o.url ? `<a class="org-url" href="${o.url}" target="_blank" onclick="event.stopPropagation()">${o.url.replace("https://","")}</a>` : `<div class="org-freq" style="height:18px"></div>`}
     <div class="org-freq">Events: ${o.freq}</div>
     <div class="org-note">${o.note}</div>
-    <button class="card-log-btn" onclick="event.stopPropagation(); openEventForm(null, ${o.id})">
-      + Log event ${eventCount > 0 ? `<span style="color:var(--textmute);">(${eventCount} logged)</span>` : ""}
-    </button>
+    <div class="card-actions">
+      <button class="card-log-btn" onclick="event.stopPropagation(); openEventForm(null, ${o.id})">
+        + Log event ${eventCount > 0 ? `<span style="color:var(--textmute);">(${eventCount} logged)</span>` : ""}
+      </button>
+      <button class="card-find-btn" onclick="openFindEvents('${o.name.replace(/'/g, "\\'")}', event)" title="Search Luma + Eventbrite">Find events ↗</button>
+    </div>
+    ${knownEventsHtml(o)}
   </div>`;
 }
 
@@ -333,11 +374,44 @@ function openOrgDetail(orgId) {
   if (o.priority) badges.push(`<span class="badge badge-priority">Priority</span>`);
   o.sectors.filter(s => s !== "all").forEach(s => badges.push(sectorBadgeHtml(s)));
 
+  const encoded = encodeURIComponent(o.name);
+  const lumaUrl = `https://lu.ma/search?q=${encoded}`;
+  const eventbriteUrl = `https://www.eventbrite.com/d/ky--louisville/${encoded}/`;
+
+  // Known recurring events section
+  let knownEventsSection = "";
+  if (o.events && o.events.length) {
+    const rows = o.events.map(ev => {
+      const monthPart = ev.month ? ` · ${ev.month}` : "";
+      const linkBtn = ev.url
+        ? `<a href="${ev.url}" target="_blank" class="modal-known-link">View ↗</a>`
+        : "";
+      return `<div class="modal-known-event">
+        <div>
+          <div class="modal-known-name">${ev.name}</div>
+          <div class="modal-known-meta">${ev.freq}${monthPart}</div>
+        </div>
+        ${linkBtn}
+      </div>`;
+    }).join("");
+
+    knownEventsSection = `
+      <div class="modal-known-section">
+        <h3 class="modal-section-label">Known recurring events (${o.events.length})</h3>
+        ${rows}
+      </div>`;
+  }
+
   let html = `
     <div class="org-detail-name">${o.name}</div>
     <div class="org-detail-meta">${badges.join("")}</div>
     <div style="font-size:13px;color:var(--textmute);margin-bottom:6px;">${o.geo} &nbsp;·&nbsp; ${o.freq}</div>
-    ${o.url ? `<a href="${o.url}" target="_blank" style="font-size:13px;color:var(--blue);display:block;margin-bottom:12px;">${o.url}</a>` : ""}
+    ${o.url ? `<a href="${o.url}" target="_blank" style="font-size:13px;color:var(--blue);display:block;margin-bottom:10px;">${o.url}</a>` : ""}
+    <div class="modal-find-row">
+      <a href="${lumaUrl}" target="_blank" class="modal-find-btn luma-btn">Search Luma ↗</a>
+      <a href="${eventbriteUrl}" target="_blank" class="modal-find-btn eventbrite-btn">Search Eventbrite ↗</a>
+    </div>
+    ${knownEventsSection}
     <div class="org-detail-note">${o.note}</div>
     <div class="org-detail-events">
       <h3>Logged events (${orgEvents.length})</h3>
